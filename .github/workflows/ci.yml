@@ -6,7 +6,7 @@ on:
       - "**"
       
 jobs:
-    build:
+    cdk:
         runs-on: ubuntu-latest
         steps:
         - name: Checkout code
@@ -21,9 +21,32 @@ jobs:
           run: mvn clean package
           working-directory: cdk
 
+    
+    lambda-st:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+    
+        - name: Set up JDK 21
+          uses: actions/setup-java@v1
+          with:
+              java-version: '21'
+
         - name: lambda-st
           run: mvn clean package
           working-directory: lambda-st
+
+    lambda:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+    
+        - name: Set up JDK 21
+          uses: actions/setup-java@v1
+          with:
+              java-version: '21'
 
         - name: lambda
           run: mvn clean package
