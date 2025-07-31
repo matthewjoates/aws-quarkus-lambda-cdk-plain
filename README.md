@@ -1,3 +1,52 @@
+# Project Initialization from Template
+
+When creating a new project from this template, you should initialize the project to use your own naming conventions. Run the `init-project.sh` script in the root directory:
+
+```
+./init-project.sh
+```
+
+You will be prompted to enter:
+- **groupId** (e.g., `com.example`)
+- **artifactId** (e.g., `my-project`)
+- **base package** (e.g., `com.example.myproject`)
+
+The script will:
+- Update the Maven `groupId` and `artifactId` in all module `pom.xml` files (`cdk`, `lambda`, `lambda-st`).
+- Replace all occurrences of the default package name (`matty`) in Java, XML, and properties files with your chosen base package.
+- Move Java source files from the default package directory to your new package directory structure.
+
+This ensures your project uses your own naming and package conventions throughout all modules.
+
+## Example: Acme Corp Order Service
+
+Suppose your company is **Acme Corp** and your project is called **order-service**. When you run `./init-project.sh`, enter:
+
+- **groupId**: `com.acme`
+- **artifactId**: `order-service`
+- **base package**: `com.acme.orderservice`
+
+After initialization, your project will have:
+
+- All Maven modules (`cdk`, `lambda`, `lambda-st`) with `pom.xml` updated to:
+  ```xml
+  <groupId>com.acme</groupId>
+  <artifactId>order-service</artifactId>
+  ```
+- All Java source files moved to:
+  ```
+  cdk/src/main/java/com/acme/orderservice/...
+  lambda/src/main/java/com/acme/orderservice/...
+  lambda-st/src/main/java/com/acme/orderservice/...
+  ```
+- All package declarations in `.java` files updated to:
+  ```java
+  package com.acme.orderservice;
+  ```
+
+This ensures your project uses your company’s namespace and project name everywhere, ready for your organization’s standards.
+
+
 # Credit: This template is based on work by Adam Bien (https://github.com/adambien)
 # MicroProfile with Quarkus as AWS Lambda Function deployed with Cloud Development Kit (CDK) v2 for Java
 

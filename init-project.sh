@@ -34,4 +34,5 @@ done
 
 echo "✅ All modules updated."
 
-source build.sh
+sleep 5
+source scripts/build.sh
