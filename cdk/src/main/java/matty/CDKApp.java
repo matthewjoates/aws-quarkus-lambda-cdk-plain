@@ -15,7 +15,7 @@ public interface CDKApp {
         Tags.of(app).add("application", appName);
 
         var stack = new InfrastructureBuilder(app, appName)
-                .functionName("matty_QuarkusOnLambda")
+                .functionName("matty-quarkus-on-lambda")
                 .functionURLBuilder()
                 .build();        
         app.synth();

@@ -16,7 +16,7 @@ import software.constructs.Construct;
 
 public class LambdaAlbStack extends Stack {
 
-    static String FUNCTION_NAME  = "matty_lambda_gretings_boundary_Greetings";
+    static String FUNCTION_NAME  = "matty-lambda-function";
 
     public LambdaAlbStack(Construct scope, String id) {
         super(scope, id+"-alb-stack");
@@ -26,7 +26,7 @@ public class LambdaAlbStack extends Stack {
         var quarkuLambda = new QuarkusLambda(this,FUNCTION_NAME,configuration);
         var publicVPCConstruct = new PublicVPC(this);
         var publicVPC = publicVPCConstruct.getVpc();
-        var alb = new Alb(this, publicVPC, "MattyLambdaLB");
+        var alb = new Alb(this, publicVPC, "matty-lambda-alb");
 
         var function = quarkuLambda.getFunction();
         var lambdaTarget = new LambdaTarget(function);
