@@ -1,3 +1,4 @@
+# Credit: This template is based on work by Adam Bien (https://github.com/adambien)
 # MicroProfile with Quarkus as AWS Lambda Function deployed with Cloud Development Kit (CDK) v2 for Java
 
 A lean starting point for building, testing and deploying Quarkus MicroProfile applications deployed as AWS Lambda behind API Gateway.
@@ -116,7 +117,7 @@ Build the Quarkus project `lambda` and deploy it with `cdk` as AWS Lambda:
 
 ```
 cd lambda
-./buildAndDeployDontAsk.sh
+./build-and-deploy-auto.sh
 ```
 
 ## continuous and accelerated deployment
