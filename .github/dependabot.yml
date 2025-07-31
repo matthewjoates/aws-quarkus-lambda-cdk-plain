@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/cdk"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "maven"
+    directory: "/lambda"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "maven"
+    directory: "/lambda-st"
+    schedule:
+      interval: "weekly"
