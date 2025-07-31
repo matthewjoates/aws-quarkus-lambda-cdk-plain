@@ -34,7 +34,7 @@ jobs:
               java-version: '21'
 
         - name: lambda-st
-          run: mvn clean package -Dsurefire.printSummary=true
+          run: mvn clean package
           working-directory: lambda-st
 
     lambda:
