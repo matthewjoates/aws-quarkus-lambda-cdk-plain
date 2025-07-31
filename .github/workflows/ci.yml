@@ -1,0 +1,30 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - "**"
+      
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+    
+        - name: Set up JDK 21
+          uses: actions/setup-java@v1
+          with:
+              java-version: '21'
+
+        - name: cdk
+          run: mvn clean package
+          working-directory: cdk
+
+        - name: lambda-st
+          run: mvn clean package
+          working-directory: lambda-st
+
+        - name: lambda
+          run: mvn clean package
+          working-directory: lambda
